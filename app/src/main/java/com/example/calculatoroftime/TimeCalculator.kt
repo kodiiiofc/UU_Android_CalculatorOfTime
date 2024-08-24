@@ -4,11 +4,11 @@ class TimeCalculator(private val string: String) {
 
     private fun parseUntil(string: String, char: Char) : Pair<Int, String> {
 
-        val parsedString = string.substringBefore(char)
-        val cutString = string.substringAfter(char)
+        val parsedString = string.substringBefore(char).trim()
+        val cutString = string.substringAfter(char).trim()
 
 
-        return if (parsedString == string) Pair(0,string) else Pair(parsedString.toInt(),cutString)
+        return if (parsedString == string.trim()) Pair(0,string) else Pair(parsedString.toInt(),cutString)
     }
 
     private val parsedHour = parseUntil(string,'h')
