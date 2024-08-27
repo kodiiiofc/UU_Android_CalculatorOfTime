@@ -2,4 +2,6 @@
     <string name="app_name">CalculatorOfTime</string>
     <string name="headerTV">Калькулятор времени</string>
     <string name="resultHeaderTV">Результат:</string>
+    <string name="reset">Очистить поля</string>
+    <string name="exit">Выйти</string>
 </resources>

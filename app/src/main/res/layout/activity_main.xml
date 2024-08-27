@@ -5,12 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbarMain"
+        app:subtitleTextColor="@color/white"
+        app:titleTextColor="@color/white"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="25dp"
@@ -20,7 +29,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbarMain"
+        app:layout_constraintVertical_bias="0">
 
         <TextView
             android:layout_width="match_parent"
@@ -29,32 +39,34 @@
             android:fontFamily="sans-serif-medium"
             android:text="@string/headerTV"
             android:textAlignment="center"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.1"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="20dp">
 
             <EditText
-                android:id="@+id/fromET"
+                android:id="@+id/firstET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:hint="от:"
+                android:hint="12h30m10s"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/toET"
+                android:id="@+id/secondET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:hint="до:"
+                android:hint="3h5m3s"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -72,18 +84,18 @@
                 android:layout_width="80dp"
                 android:layout_height="84dp"
                 android:layout_marginRight="40dp"
+                android:backgroundTint="@color/button"
                 android:text="+"
-                android:textSize="36sp"
-                android:backgroundTint="@color/red"/>
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/minusBTN"
                 android:layout_width="80dp"
                 android:layout_height="84dp"
                 android:layout_marginLeft="40dp"
+                android:backgroundTint="@color/button"
                 android:text="-"
-                android:textSize="36sp"
-                android:backgroundTint="@color/blue"/>
+                android:textSize="36sp" />
 
         </LinearLayout>
 
@@ -95,22 +107,15 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/resultHeaderTV"
-                android:textAlignment="center"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="26sp" />
-
-            <TextView
                 android:id="@+id/resultTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text=""
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/resultHeaderTV"
                 android:textAlignment="center"
-                android:textSize="20sp"/>
+                android:textSize="26sp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
